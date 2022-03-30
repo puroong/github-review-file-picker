@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+
+  "name": "Github Review File Picker",
+  "description": "Github Review File Picker",
+  "version": "0.1",
+
+  "action": {
+    "default_icon": {
+      "16": "icon/icon16.png",
+      "24": "icon/icon24.png",
+      "32": "icon/icon32.png"
+    },
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+      {
+          "matches": ["https://github.com/*/pull/*/files"],
+          "js": ["js/vendor.js", "js/content_script.js"]
+      }
+  ],
+
+  "host_permissions": [
+    "https://github.com/*/pull/*/files"
+  ]
+}
